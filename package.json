@@ -1,0 +1,16 @@
+{
+  "name": "mailwind",
+  "version": "1.0.0",
+  "description": "Tailwind CSS for HTML emails",
+  "scripts": {
+    "build": "postcss ./src --dir ./dist"
+  },
+  "author": "Soheil Rashidi",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "10.2.5",
+    "postcss": "8.2.8",
+    "postcss-cli": "8.3.1",
+    "tailwindcss": "2.0.4"
+  }
+}
