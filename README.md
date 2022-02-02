@@ -1,32 +1,101 @@
 # Mailwind
 Tailwind CSS for HTML emails.
 
-Tailwind makes it very easy to design websites, why not use it to design HTML emails? I've been using this at [volt.fm](https://volt.fm) and it has made my life a lot easier.
+Tailwind makes it very easy to design websites, why not use it to design HTML emails? I've been using this for [volt.fm](https://volt.fm) and [pikaso.me](https://pikaso.me) and it has made my life a lot easier.
+
+## Install
+```
+npm install -g mailwind
+```
 
 ## Usage
 
-1. Copy the `dist/mailwind.css` file to your project.
-2. Use the Tailwind utility classes in your HTML email like you normally would for the web.
-3. Run your HTML email through a CSS inliner tool (like [Juice](https://github.com/Automattic/juice)).
+Design your HTML email using the Tailwind utility classes like you normally would for the web.
 
-## How It Works?
-
-This project configures Tailwind to generate a CSS file that includes all the available utility classes, but tailored for use in emails:
-
-- All the units are changed to pixel.
-- All the variants (like hover: and focus:) and responsive breakpoints (like sm: and md:) are removed since they can't be inlined.
-
-## Building
-
-If you make any changes to the config file, run the following command to generate the CSS file again:
+Then run the following command to generate the corresponding CSS file:
 
 ```
-npm run build
+mailwind --input-html email.html --output-css style.css
+```
+
+Or run this command to generate an inlined HTML file:
+
+```
+mailwind --input-html email.html --output-html email-inlined.html
+```
+
+## Options
+
+`--input-css`
+
+The path to your base CSS file. Use this if you need to write custom CSS. Defaults to [style.css](./src/style.css).
+
+`--input-html`
+
+The path to your HTML email file.
+
+`--output-css`
+
+The path to the CSS file that will be generated.
+
+`--output-html`
+
+The path to the inlined HTML file that will be generated.
+
+`--tailwind-config`
+
+The path to your custom Tailwind configuration file. Defaults to [tailwind.config.js](./src/tailwind.config.js).
+
+## Note
+
+In the provided default config file, all the units are changed to pixel which is probably what you want for HTML emails.
+
+## Example
+
+Given an `email.html` file with this content:
+
+```html
+<html>
+  <body>
+    <p class="font-bold text-lg">Welcome</p>
+  </body>
+</html>
+```
+
+running this command:
+```
+mailwind \
+  --input-html email.html \
+  --output-css style.css \
+  --output-html email-inlined.html
+```
+
+will generate the following CSS and inlined HTML files:
+
+```css
+.text-lg {
+  font-size: 18px
+}
+
+.font-bold {
+  font-weight: 700
+}
+```
+
+```html
+<html>
+  <body>
+    <p class="font-bold text-lg" style="font-size: 18px; font-weight: 700;">Welcome</p>
+  </body>
+</html>
 ```
 
 ## Version History
++ **2.0**
+	+ New design
+	+ Upgrade to Tailwind CSS v3
 + **1.0**
-	+ Initial release.
+	+ Initial release
 
 ## Author
 **Soheil Rashidi**
@@ -36,7 +105,7 @@ npm run build
 + http://github.com/soheilpro
 
 ## Copyright and License
-Copyright 2021 Soheil Rashidi.
+Copyright 2022 Soheil Rashidi.
 
 Licensed under the The MIT License (the "License");
 you may not use this work except in compliance with the License.
