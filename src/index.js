@@ -83,14 +83,15 @@ async function main() {
     return;
   }
 
-  const tailwindcss_path = path.resolve(__dirname, '../node_modules/.bin/tailwindcss');
+  const tailwindcss_path = path.resolve(__dirname, '../node_modules/tailwindcss/lib/cli.js');
   const tailwind_config_path = argv['tailwind-config'] || path.resolve(__dirname, './tailwind.config.js');
   const input_css_path = argv['input-css'] || path.resolve(__dirname, './style.css');
   const output_css_path = argv['output-css'] || path.resolve(os.tmpdir(), 'mailwind.css');
   const input_html_path = argv['input-html'];
   const output_html_path = argv['output-html'];
 
-  const result = await exec(tailwindcss_path, [
+  const result = await exec(process.argv0, [
+    tailwindcss_path,
     '--config', tailwind_config_path,
     '--input', input_css_path,
     '--output', output_css_path,
