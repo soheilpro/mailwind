@@ -1,5 +1,5 @@
 # Mailwind
-Tailwind CSS for HTML emails.
+Use Tailwind CSS to design HTML emails.
 
 Tailwind makes it very easy to design websites, why not use it to design HTML emails? I've been using this for [volt.fm](https://volt.fm) and [pikaso.me](https://pikaso.me) and it has made my life a lot easier.
 
