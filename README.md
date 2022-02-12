@@ -90,6 +90,20 @@ will generate the following CSS and inlined HTML files:
 </html>
 ```
 
+## Local dependency
+
+If you wish to install `mailwind` as part of your local dev dependencies, run:
+
+```
+npm install --save-dev mailwind
+```
+
+... and this `postinstall` script to your  `package.json` to install nested `node_modules`:
+
+```
+"postinstall": "cd node_modules/mailwind && npm i"
+```
+
 ## Version History
 + **2.0**
 	+ New design
