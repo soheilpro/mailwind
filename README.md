@@ -91,6 +91,9 @@ will generate the following CSS and inlined HTML files:
 ```
 
 ## Version History
++ **2.1**
+	+ Colors are now generated without using CSS variables
+	+ Upgrade to Tailwind CSS v3.2
 + **2.0**
 	+ New design
 	+ Upgrade to Tailwind CSS v3

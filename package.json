@@ -1,6 +1,6 @@
 {
   "name": "mailwind",
-  "version": "2.0.3",
+  "version": "2.1.0",
   "description": "Use Tailwind CSS to design HTML emails.",
   "license": "MIT",
   "homepage": "https://github.com/soheilpro/mailwind",
