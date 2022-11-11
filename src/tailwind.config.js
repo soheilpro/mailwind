@@ -63,4 +63,13 @@ module.exports = {
       },
     },
   },
+  corePlugins: {
+    backdropOpacity: false,
+    backgroundOpacity: false,
+    borderOpacity: false,
+    divideOpacity: false,
+    placeholderOpacity: false,
+    ringOpacity: false,
+    textOpacity: false,
+  },
 }
