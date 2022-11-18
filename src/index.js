@@ -83,7 +83,7 @@ async function main() {
     return;
   }
 
-  const tailwindcss_path = path.resolve(__dirname, '../node_modules/tailwindcss/lib/cli.js');
+  const tailwindcss_path = require.resolve('tailwindcss/lib/cli.js');
   const tailwind_config_path = argv['tailwind-config'] || path.resolve(__dirname, './tailwind.config.js');
   const input_css_path = argv['input-css'] || path.resolve(__dirname, './style.css');
   const output_css_path = argv['output-css'] || path.resolve(os.tmpdir(), 'mailwind.css');
