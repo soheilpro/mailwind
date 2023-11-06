@@ -1,7 +1,9 @@
 import { spawn } from "child_process";
+import path from "path";
 
 const BASE_PX = 16;
-const TAILWIND_CONFIG_PATH = "./tailwind.config.cjs";
+
+const TAILWIND_CONFIG_PATH = path.resolve(__dirname, "../tailwind.config.cjs");
 
 interface ExecResult {
     exit_code: number;

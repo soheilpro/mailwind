@@ -1,21 +1,24 @@
 import fs from "fs";
+import path from "path";
 import { hideBin } from "yargs/helpers";
 import yargs from "yargs/yargs";
 import { mailwindCss, MailwindOptions } from "./mailwind";
+
+import { TAILWIND_CONFIG_PATH } from "./utils";
 
 const y = yargs(hideBin(process.argv))
     .option("input-html", {
         alias: "i",
         describe: "The path to your input HTML file",
         type: "string",
-        default: "./data/email.html",
+        default: path.resolve(__dirname, "../email.html"),
         demandOption: true,
     })
     .option("output-html", {
         alias: "o",
         describe: "The path to the inlined HTML file that will be generated",
         type: "string",
-        default: "./data/email.output.html",
+        default: path.resolve(__dirname, "../email.output.html"),
         demandOption: true,
     })
     .option("input-css", {
@@ -30,10 +33,12 @@ const y = yargs(hideBin(process.argv))
     .option("tailwind-config", {
         type: "string",
         describe: "The path to your custom Tailwind config file",
+        default: TAILWIND_CONFIG_PATH,
     })
     .option("reset", {
         type: "string",
         describe: "Set to `false` to disable extended resets",
+        default: "false",
     });
 
 const main = async (): Promise<void> => {
@@ -53,23 +58,24 @@ const main = async (): Promise<void> => {
     const inputHtml = fs.readFileSync(inputHtmlPath, "utf-8");
 
     const options: MailwindOptions = {
-        css: inputCssPath ? fs.readFileSync(inputCssPath, "utf-8") : undefined,
+        css: inputCssPath != null ? fs.readFileSync(inputCssPath, "utf-8") : undefined,
         tailwindConfigPath,
         reset: reset === "false" ? false : true,
     };
 
     const output = await mailwindCss(inputHtml, options);
 
-    if (!output) {
+    if (output == null) {
         console.log("Failed to generate output.");
-        return;
+        process.exit(1);
     }
+
     const { html, css } = output;
 
-    if (outputHtmlPath) {
+    if (outputHtmlPath != null) {
         fs.writeFileSync(outputHtmlPath, html);
     }
-    if (outputCssPath) {
+    if (outputCssPath != null) {
         fs.writeFileSync(outputCssPath, css);
     }
 };

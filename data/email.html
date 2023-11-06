@@ -1,199 +1,213 @@
-<!doctype html><html style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; line-height: 1.5; -webkit-text-size-adjust: 100%; -moz-tab-size: 4; -o-tab-size: 4; tab-size: 4; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &#x27; undefined: SegoeUI&#x27; undefined: ,Roboto,&#x27; undefined: HelveticaNeue&#x27; undefined: ,Arial,&#x27; undefined: NotoSans&#x27; undefined: ,sans-serif,&#x27; undefined: AppleColorEmoji&#x27; undefined: ,&#x27; undefined: SegoeUIEmoji&#x27; undefined: ,&#x27; undefined: SegoeUISymbol&#x27; undefined: ,&#x27; undefined: NotoColorEmoji&#x27; font-feature-settings: normal;"><head style="">
-        <script src="https://cdn.tailwindcss.com" style=""></script>
-        <style type="text/css" style="">
-img:hover {
-  border: 0 none;
-  height: auto;
-  line-height: 100%;
-  outline: none;
-  text-decoration: none;
-}
-</style>
-    <style style="">
-:-moz-focusring {
-  outline: auto;
-}
-.bg-gray-100 {
-  background-color: #f3f4f6;
-}
-.text-gray-700 {
-  color: #374151;
-}
-.first\:rounded-t-md:first-child {
-  border-top-left-radius: 0.375rem;
-  border-top-right-radius: 0.375rem;
-}
-.last\:rounded-b-md:last-child {
-  border-bottom-right-radius: 0.375rem;
-  border-bottom-left-radius: 0.375rem;
-}
-.odd\:bg-gray-200:nth-child(odd) {
-  background-color: #e5e7eb;
-}
-.even\:bg-gray-100:nth-child(even) {
-  background-color: #f3f4f6;
-}
-.hover\:text-gray-700:hover {
-  color: #374151;
-}
-</style><style style="">
-:-moz-focusring {
-  outline: auto;
-}
-.bg-gray-100 {
-  background-color: #f3f4f6;
-}
-.text-gray-700 {
-  color: #374151;
-}
-.first\:rounded-t-md:first-child {
-  border-top-left-radius: 0.375rem;
-  border-top-right-radius: 0.375rem;
-}
-.last\:rounded-b-md:last-child {
-  border-bottom-right-radius: 0.375rem;
-  border-bottom-left-radius: 0.375rem;
-}
-.odd\:bg-gray-200:nth-child(odd) {
-  background-color: #e5e7eb;
-}
-.even\:bg-gray-100:nth-child(even) {
-  background-color: #f3f4f6;
-}
-.hover\:text-gray-700:hover {
-  color: #374151;
-}
-</style><style style=""></style><style style=""></style></head>
+<!doctype html>
+<html>
+    <head>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            .text-cc0000 {
+                color: #cc0000;
+            }
+        </style>
+        <style type="text/css">
+            /* /\/\/\/\/\/\/\/\/ RESET STYLES /\/\/\/\/\/\/\/\/ */
+            body {
+                margin: 0;
+                padding: 0;
+            }
 
-    <body id="bodyTable" class="p-4 font-sans text-gray-900 bg-gray-100 w-full h-full" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; line-height: inherit; background-color: #f3f4f6; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &#x27; undefined: SegoeUI&#x27; undefined: ,Roboto,&#x27; undefined: HelveticaNeue&#x27; undefined: ,Arial,&#x27; undefined: NotoSans&#x27; undefined: ,sans-serif,&#x27; undefined: AppleColorEmoji&#x27; undefined: ,&#x27; undefined: SegoeUIEmoji&#x27; undefined: ,&#x27; undefined: SegoeUISymbol&#x27; undefined: ,&#x27; undefined: NotoColorEmoji&#x27; color: #111827; margin: 0; padding: 0; height: 100% !important; width: 100% !important;">
-        <div class="grid grid-cols-2 items-center gap-4 rounded-lg p-2" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center; gap: 16px; border-radius: 0.5rem; padding: 8px;">
-            <h1 class="text-4xl text-gray-800 col-span-1" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; padding: 0; font-weight: inherit; margin: 0; grid-column: span 1 / span 1; font-size: 36px; color: #1f2937;">
-                <span class="font-extrabold" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; font-weight: 800;">FRN report</span>
-                <div class="text-2xl text-gray-600" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; font-size: 24px; color: #4b5563;">
-                    <span class="italic" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; font-style: italic;">{{ date_range[0] }}</span> to
-                    <span class="italic" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; font-style: italic;">{{ date_range[1] }}</span>
+            img {
+                border: 0 none;
+                height: auto;
+                line-height: 100%;
+                outline: none;
+                text-decoration: none;
+            }
+
+            a img {
+                border: 0 none;
+            }
+
+            .imageFix {
+                display: block;
+            }
+
+            table,
+            td {
+                border-collapse: collapse;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                margin: 0;
+                padding: 0;
+            }
+
+            #bodyTable {
+                height: 100% !important;
+                margin: 0;
+                padding: 0;
+                width: 100% !important;
+            }
+        </style>
+    </head>
+
+    <body id="bodyTable" class="p-4 font-sans text-gray-900 bg-gray-100 w-full h-full">
+        <div class="grid grid-cols-2 items-center gap-4 rounded-lg p-2">
+            <h1 class="text-4xl text-gray-800 col-span-1">
+                <span class="font-extrabold">FRN report</span>
+                <div class="text-2xl text-gray-600">
+                    <span class="italic">{{ date_range[0] }}</span> to
+                    <span class="italic">{{ date_range[1] }}</span>
                 </div>
             </h1>
 
-            <img src="https://brand.ncsu.edu/img/downloads/logo-09.jpg" alt="NCSU Logo" class="w-16 col-span-1 justify-self-end" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; display: block; vertical-align: middle; max-width: 100%; height: auto; grid-column: span 1 / span 1; width: 64px; justify-self: end;" width="64" height="auto">
+            <img
+                src="https://brand.ncsu.edu/img/downloads/logo-09.jpg"
+                alt="NCSU Logo"
+                class="w-16 col-span-1 justify-self-end"
+            />
         </div>
 
-        <p class="text-gray-600 p-2" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; margin: 0; padding: 8px; color: #4b5563;">
-            Attached below are a series of <code style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, &#x27; undefined: LiberationMono&#x27; undefined: ,&#x27; undefined: CourierNew&#x27; undefined: ,monospace; font-size: 1em;">.xlsx</code> files constituting your
+        <p class="text-gray-600 p-2">
+            Attached below are a series of <code>.xlsx</code> files constituting your
             weekly FRN status report. This comprehensive document includes your
-            <span class="font-bold" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; font-weight: 700;">assigned</span> BENs, all
-            <span class="font-bold" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; font-weight: 700;">unassigned</span> BENs, and a delta report. Any
+            <span class="font-bold">assigned</span> BENs, all
+            <span class="font-bold">unassigned</span> BENs, and a delta report. Any
             changes in the data are highlighted in
-            <span class="font-bold text-cc0000" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; font-weight: 700;">red cells</span> for easy
+            <span class="font-bold text-cc0000">red cells</span> for easy
             identification.
         </p>
 
-        <div class="grid grid-cols-1 gap-2" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; display: grid; grid-template-columns: repeat(1, minmax(0, 1fr)); gap: 8px;">
+        <div class="grid grid-cols-1 gap-2">
             {% for key, value in summaries.items() %}
-                <div class="grid grid-cols-1 gap-2 p-4 bg-white rounded-lg shadow-lg" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; display: grid; grid-template-columns: repeat(1, minmax(0, 1fr)); gap: 8px; border-radius: 0.5rem; background-color: #fff; padding: 16px; box-shadow: 0 0 #0000;">
+                <div class="grid grid-cols-1 gap-2 p-4 bg-white rounded-lg shadow-lg">
                     {% if len(value) %}
-                        <h3 class="text-2xl font-bold text-cc0000" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; padding: 0; margin: 0; font-size: 24px; font-weight: 700;">{{ key }} Items</h3>
+                        <h3 class="text-2xl font-bold text-cc0000">{{ key }} Items</h3>
 
-                        <h3 class="text-xl text-gray-700" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; padding: 0; font-weight: inherit; margin: 0; font-size: 20px; color: #374151;">
+                        <h3 class="text-xl text-gray-700">
                             New Committed Funding:
-                            <span class="font-bold" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; font-weight: 700;">{{ value["new_committed_funding"] }}</span>
+                            <span class="font-bold"
+                                >{{ value["new_committed_funding"] }}</span
+                            >
                         </h3>
 
-                        <hr class="m-0.5" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; height: 0; color: inherit; border-top-width: 1px; margin: 2px;">
+                        <hr class="m-0.5" />
 
                         {% for (ben, name), group in value["bens_group"] %}
-                            <h3 class="text-2xl text-cc0000" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; padding: 0; font-weight: inherit; margin: 0; font-size: 24px;">
-                                {{ name }} <span class="italic" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; font-style: italic;">({{ ben }})</span>
+                            <h3 class="text-2xl text-cc0000">
+                                {{ name }} <span class="italic">({{ ben }})</span>
                             </h3>
 
-                            <div class="grid grid-cols-1 gap-2 p-2 rounded-lg border" style="                 box-sizing: border-box; border-style: solid; border-color: #e5e7eb; display: grid; grid-template-columns: repeat(1, minmax(0, 1fr)); gap: 8px; border-radius: 0.5rem; border-width: 1px; padding: 8px;">
+                            <div class="grid grid-cols-1 gap-2 p-2 rounded-lg border">
                                 {% for n, (frn, row) in enumerate(group.iterrows()) %}
                                     {% if n > 0 %}
-                                        <hr class="m-2" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; height: 0; color: inherit; border-top-width: 1px; margin: 8px;">
+                                        <hr class="m-2" />
                                     {% endif %}
 
-                                    <div class="grid grid-cols-2 gap-0.25" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));">
-                                        <h4 class="text-xl mb-2 col-span-2 text-gray-700" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; padding: 0; font-weight: inherit; margin: 0; grid-column: span 2 / span 2; margin-bottom: 8px; font-size: 20px; color: #374151;">
+                                    <div class="grid grid-cols-2 gap-0.25">
+                                        <h4
+                                            class="text-xl mb-2 col-span-2 text-gray-700"
+                                        >
                                             FRN {{ frn }}
-                                            <span class="italic" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; font-style: italic;">({{ row["FRN Nickname"] }})</span>
-                                            <div class="text-sm col-span-2 text-gray-600" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; grid-column: span 2 / span 2; font-size: 14px; color: #4b5563;">
+                                            <span class="italic"
+                                                >({{ row["FRN Nickname"] }})</span
+                                            >
+                                            <div
+                                                class="text-sm col-span-2 text-gray-600"
+                                            >
                                                 Funding Year {{ row["Funding Year"] }}
                                             </div>
                                         </h4>
 
-                                        <div class="font-bold text-gray-700" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; font-weight: 700; color: #374151;">
+                                        <div class="font-bold text-gray-700">
                                             Service Provider Name
                                         </div>
-                                        <div class="text-gray-600" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; color: #4b5563;">
+                                        <div class="text-gray-600">
                                             {{ row["Service Provider Name"] }}
                                         </div>
-                                        <div class="font-bold text-gray-700" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; font-weight: 700; color: #374151;">
+                                        <div class="font-bold text-gray-700">
                                             Contact Email
                                         </div>
-                                        <div class="text-gray-600" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; color: #4b5563;">
-                                            <a href="mailto:{{ row[" contact="" email&#x26;#x26;#x26;#x22;]="" }}&#x26;#x26;#x26;#x22;=" " class="underline text-cc0000 hover:text-gray-700" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; color: inherit; text-decoration: inherit; text-decoration-line: underline;">
+                                        <div class="text-gray-600">
+                                            <a
+                                                href="mailto:{{ row['Contact Email'] }}"
+                                                class="underline text-cc0000 hover:text-gray-700"
+                                            >
                                                 {{ row["Contact Email"] }}
                                             </a>
                                         </div>
-                                        <div class="font-bold text-gray-700" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; font-weight: 700; color: #374151;">
+                                        <div class="font-bold text-gray-700">
                                             Service Provider Number
                                         </div>
-                                        <div class="text-gray-600" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; color: #4b5563;">
+                                        <div class="text-gray-600">
                                             {{ row["Service Provider Number"] }}
                                         </div>
-                                        <div class="font-bold text-gray-700" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; font-weight: 700; color: #374151;">
+                                        <div class="font-bold text-gray-700">
                                             Category
                                         </div>
-                                        <div class="text-gray-600" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; color: #4b5563;">
+                                        <div class="text-gray-600">
                                             {{ row["Category"] }}
                                         </div>
-                                        <div class="font-bold text-gray-700" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; font-weight: 700; color: #374151;">
+                                        <div class="font-bold text-gray-700">
                                             Funding Commitment Request
                                         </div>
-                                        <div class="text-gray-600" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; color: #4b5563;">
+                                        <div class="text-gray-600">
                                             {{ row["Funding Commitment Request"] }}
                                         </div>
-                                        <div class="font-bold text-gray-700" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; font-weight: 700; color: #374151;">
+                                        <div class="font-bold text-gray-700">
                                             Funding Request Status
                                         </div>
-                                        <div class="text-gray-600" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; color: #4b5563;">
+                                        <div class="text-gray-600">
                                             {{ row["Funding Request Status"] }}
                                         </div>
                                         {% if not pd.isna(row["Changes"]).all() and len(row["Changes"]) %}
                                             {% if len(row["Changes"]) == 1 and row["Changes"][0]["column"] == "Newly Tracked FRN" %}
-                                                <span class="col-span-2 mb-1 font-bold text-cc0000" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; grid-column: span 2 / span 2; margin-bottom: 4px; font-weight: 700;">
+                                                <span
+                                                    class="col-span-2 mb-1 font-bold text-cc0000"
+                                                >
                                                     Newly Tracked FRN
                                                 </span>
                                             {% else %}
-                                                <div class="col-span-2 mb-1 mt-1 text-l font-bold text-cc0000" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; grid-column: span 2 / span 2; margin-bottom: 4px; margin-top: 4px; font-weight: 700;">
+                                                <div
+                                                    class="col-span-2 mb-1 mt-1 text-l font-bold text-cc0000"
+                                                >
                                                     Changes ({{ len(row["Changes"]) }})
                                                 </div>
-                                                <ul class="col-span-2 grid grid-cols-1 text-gray-600 w-full" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; list-style: none; margin: 0; padding: 0; grid-column: span 2 / span 2; display: grid; width: 100%; grid-template-columns: repeat(1, minmax(0, 1fr)); color: #4b5563;">
+                                                <ul
+                                                    class="col-span-2 grid grid-cols-1 text-gray-600 w-full"
+                                                >
                                                     {% for n, change in enumerate(row["Changes"]) %}
-                                                        <li class="grid grid-cols-4 p-1.5 even:bg-gray-100 odd:bg-gray-200 first:rounded-t-md last:rounded-b-md" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 6px; border-top-left-radius: 0.375rem; border-top-right-radius: 0.375rem; background-color: #e5e7eb;">
-                                                            <span class="font-bold" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; font-weight: 700;">
+                                                        <li
+                                                            class="grid grid-cols-4 p-1.5 even:bg-gray-100 odd:bg-gray-200 first:rounded-t-md last:rounded-b-md"
+                                                        >
+                                                            <span class="font-bold">
                                                                 {{ change["column"] }}
                                                             </span>
-                                                            <span class="" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb;">
+                                                            <span class="">
                                                                 {{ change["previous"] }}
                                                                 ➡️
                                                             </span>
-                                                            <span class="" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb;">
+                                                            <span class="">
                                                                 {{ change["current"] }}
                                                             </span>
                                                         </li>
-                                                        <li class="grid grid-cols-4 p-1.5 even:bg-gray-100 odd:bg-gray-200 first:rounded-t-md last:rounded-b-md" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 6px; border-bottom-right-radius: 0.375rem; border-bottom-left-radius: 0.375rem; background-color: #f3f4f6;">
-                                                            <span class="font-bold" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; font-weight: 700;">
-                                                                {{ change["column"] }}
-                                                            </span>
-                                                            <span class="" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb;">
-                                                                {{ change["previous"] }}
-                                                                ➡️
-                                                            </span>
-                                                            <span class="" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb;">
-                                                                {{ change["current"] }}
-                                                            </span>
-                                                        </li>
+                                                        <li
+                                                        class="grid grid-cols-4 p-1.5 even:bg-gray-100 odd:bg-gray-200 first:rounded-t-md last:rounded-b-md"
+                                                    >
+                                                        <span class="font-bold">
+                                                            {{ change["column"] }}
+                                                        </span>
+                                                        <span class="">
+                                                            {{ change["previous"] }}
+                                                            ➡️
+                                                        </span>
+                                                        <span class="">
+                                                            {{ change["current"] }}
+                                                        </span>
+                                                    </li>
                                                     {% endfor %}
                                                 </ul>
                                             {% endif %}
@@ -207,22 +221,26 @@ img:hover {
             {% endfor %}
         </div>
 
-        <div class="p-2 mt-4" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; margin-top: 16px; padding: 8px;">
-            <p class="text-gray-600" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; margin: 0; color: #4b5563;">
+        <div class="p-2 mt-4">
+            <p class="text-gray-600">
                 With love from the Friday Institute,
-                <br style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb;">
-                <span class="text-cc0000 font-bold underline hover:text-gray-700" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; font-weight: 700; text-decoration-line: underline;">
-                    <a href="https://fi.ncsu.edu/teams/til/" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; color: inherit; text-decoration: inherit;">Technology Infrastructure Lab</a>
+                <br />
+                <span class="text-cc0000 font-bold underline hover:text-gray-700">
+                    <a href="https://fi.ncsu.edu/teams/til/"
+                        >Technology Infrastructure Lab</a
+                    >
                 </span>
             </p>
-            <p class="text-gray-600 text-xs mt-2" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; margin: 0; margin-top: 8px; font-size: 12px; color: #4b5563;">
+            <p class="text-gray-600 text-xs mt-2">
                 Contact
-                <a href="mailto:mbabb@ncsu.edu?subject=Unsubscribe%20from%20FRN%20status" class="underline text-cc0000 hover:text-gray-700" style="                 box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; color: inherit; text-decoration: inherit; text-decoration-line: underline;">
+                <a
+                    href="mailto:mbabb@ncsu.edu?subject=Unsubscribe%20from%20FRN%20status"
+                    class="underline text-cc0000 hover:text-gray-700"
+                >
                     mbabb@ncsu.edu
                 </a>
                 if you no longer wish to receive these emails.
             </p>
         </div>
-    
-
-</body></html>
+    </body>
+</html>

@@ -1,17 +1,11 @@
 {
     "name": "mailwind",
-    "version": "3.0.0",
+    "version": "3.0.1",
     "description": "Use Tailwind CSS to design HTML emails.",
     "license": "MIT",
     "homepage": "https://github.com/soheilpro/mailwind",
     "type": "module",
-    "exports": {
-        ".": {
-            "import": "./dist/mailwind.js",
-            "require": "./dist/mailwind.cjs",
-            "node": "./dist/mailwind.cjs"
-        }
-    },
+
     "bin": {
         "mailwind": "./dist/mailwind.cjs"
     },
@@ -25,7 +19,7 @@
     "scripts": {
         "build": "vite build",
         "test": "vitest",
-        "tmp": "vite build && node ./dist/mailwind.cjs"
+        "tmp": "vite build && chmod a+x ./dist/mailwind.cjs"
     },
     "author": "Soheil Rashidi, Mike Babb",
     "dependencies": {

@@ -1,5 +1,5 @@
 declare const BASE_PX = 16;
-declare const TAILWIND_CONFIG_PATH = "./tailwind.config.cjs";
+declare const TAILWIND_CONFIG_PATH: string;
 interface ExecResult {
     exit_code: number;
     stdout: string;

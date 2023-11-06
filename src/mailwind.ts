@@ -2,10 +2,10 @@ import fs from "fs";
 import juice from "juice";
 import os from "os";
 import path from "path";
+import process from "process";
 import { rehype } from "rehype";
 import rehypeRewrite from "rehype-rewrite";
 import stringify from "rehype-stringify";
-import process from "process";
 
 import resetStyles from "../styles/reset.scss?inline";
 import universalStyles from "../styles/universal.scss?inline";
@@ -88,10 +88,14 @@ const hypeHtml = (html: string, css?: string[]) => {
                     }
                 }
 
-                node.properties = {
-                    ...node.properties,
-                    style: resolveCssVariables(`${node.properties?.style ?? ""}`),
-                };
+                if (node.properties?.style != null) {
+                    const style = resolveCssVariables(`${node.properties.style}`);
+
+                    node.properties = {
+                        ...node.properties,
+                        style,
+                    };
+                }
             },
         })
         .use(stringify)
@@ -142,7 +146,10 @@ const inlineStyles = (html: string, tailwindCss: string, extraCss?: string[]) =>
 
     const htmlWithCss = hypeHtml(html, [tailwindCss]);
     const juiced = juice(htmlWithCss, juiceOptions);
-    const hyped = hypeHtml(juiced, extraCss);
+
+    let hyped = hypeHtml(juiced, extraCss);
+
+    hyped = hyped.replace(/&#x27;/g, "'");
 
     return hyped;
 };

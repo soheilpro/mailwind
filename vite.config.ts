@@ -27,7 +27,7 @@ export default defineConfig({
 
     build: {
         sourcemap: true,
-        minify: false,
+        minify: true,
         outDir: path.resolve(__dirname, "./dist/"),
         emptyOutDir: true,
 
