@@ -7,9 +7,9 @@
     "type": "module",
     "exports": {
         ".": {
-            "import": "./dist/mailwind.mjs",
-            "require": "./dist/mailwind.js",
-            "node": "./dist/mailwind.js"
+            "import": "./dist/mailwind.js",
+            "require": "./dist/mailwind.cjs",
+            "node": "./dist/mailwind.cjs"
         }
     },
     "typesVersions": {
