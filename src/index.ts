@@ -4,17 +4,22 @@ import yargs from "yargs/yargs";
 import { mailwindCss, MailwindOptions } from "./mailwind";
 
 const y = yargs(hideBin(process.argv))
-    .positional("input-html", {
+    .option("input-html", {
+        alias: "i",
         describe: "The path to your input HTML file",
         type: "string",
         default: "./data/email.html",
+        demandOption: true,
     })
-    .positional("output-html", {
+    .option("output-html", {
+        alias: "o",
         describe: "The path to the inlined HTML file that will be generated",
         type: "string",
         default: "./data/email.output.html",
+        demandOption: true,
     })
     .option("input-css", {
+        alias: "c",
         type: "string",
         describe: "The path to your custom CSS file",
     })
@@ -29,8 +34,7 @@ const y = yargs(hideBin(process.argv))
     .option("reset", {
         type: "string",
         describe: "Set to `false` to disable extended resets",
-    })
-    .demandOption(["input-html", "output-html"]);
+    });
 
 const main = async (): Promise<void> => {
     console.log("Running mailwind...");
@@ -49,23 +53,23 @@ const main = async (): Promise<void> => {
     const inputHtml = fs.readFileSync(inputHtmlPath, "utf-8");
 
     const options: MailwindOptions = {
-        css: inputCssPath != null ? fs.readFileSync(inputCssPath, "utf-8") : undefined,
+        css: inputCssPath ? fs.readFileSync(inputCssPath, "utf-8") : undefined,
         tailwindConfigPath,
         reset: reset === "false" ? false : true,
     };
 
     const output = await mailwindCss(inputHtml, options);
 
-    if (output == null) {
+    if (!output) {
         console.log("Failed to generate output.");
         return;
     }
     const { html, css } = output;
 
-    if (outputHtmlPath != null) {
+    if (outputHtmlPath) {
         fs.writeFileSync(outputHtmlPath, html);
     }
-    if (outputCssPath != null) {
+    if (outputCssPath) {
         fs.writeFileSync(outputCssPath, css);
     }
 };

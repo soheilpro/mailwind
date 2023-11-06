@@ -12,7 +12,6 @@ interface ExecResult {
 const exec = async (name: string, args: string[]): Promise<ExecResult> => {
     return new Promise((resolve, reject) => {
         const child = spawn(name, args);
-        console.log("Spawned child process:", child.pid);
         let stdout = Buffer.alloc(0);
         let stderr = Buffer.alloc(0);
 

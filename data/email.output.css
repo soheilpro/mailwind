@@ -513,10 +513,6 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.collapse {
-  visibility: collapse;
-}
-
 .col-span-1 {
   grid-column: span 1 / span 1;
 }
@@ -561,10 +557,6 @@ video {
   display: block;
 }
 
-.table {
-  display: table;
-}
-
 .grid {
   display: grid;
 }
@@ -579,10 +571,6 @@ video {
 
 .w-16 {
   width: 64px;
-}
-
-.border-collapse {
-  border-collapse: collapse;
 }
 
 .grid-cols-2 {
@@ -685,6 +673,10 @@ video {
   font-style: italic;
 }
 
+.text-gray-700 {
+  color: #374151;
+}
+
 .text-gray-900 {
   color: #111827;
 }
@@ -695,10 +687,6 @@ video {
 
 .text-gray-600 {
   color: #4b5563;
-}
-
-.text-gray-700 {
-  color: #374151;
 }
 
 .underline {

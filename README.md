@@ -28,11 +28,11 @@ mailwind --input-html email.html --output-html email-inlined.html
 
 ## Options
 
-`--input-html`, `-i`, positional
+`--input-html`, `-i`
 
 The path to your HTML email file.
 
-`--output-html`, `-o`, positional
+`--output-html`, `-o`
 
 The path to the inlined HTML file that will be generated.
 

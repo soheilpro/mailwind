@@ -33477,7 +33477,6 @@ const TAILWIND_CONFIG_PATH = "./tailwind.config.cjs";
 const exec = async (name2, args) => {
   return new Promise((resolve, reject) => {
     const child = child_process.spawn(name2, args);
-    console.log("Spawned child process:", child.pid);
     let stdout = dist.Buffer.alloc(0);
     let stderr = dist.Buffer.alloc(0);
     child.stdout.on("data", (data2) => {
@@ -33639,15 +33638,20 @@ const mailwindCss = async (inputHtml, options2) => {
     css: tailwindCss
   };
 };
-const y = yargs(helpers$5.hideBin(dist.process.argv)).positional("input-html", {
+const y = yargs(helpers$5.hideBin(dist.process.argv)).option("input-html", {
+  alias: "i",
   describe: "The path to your input HTML file",
   type: "string",
-  default: "./data/email.html"
-}).positional("output-html", {
+  default: "./data/email.html",
+  demandOption: true
+}).option("output-html", {
+  alias: "o",
   describe: "The path to the inlined HTML file that will be generated",
   type: "string",
-  default: "./data/email.output.html"
+  default: "./data/email.output.html",
+  demandOption: true
 }).option("input-css", {
+  alias: "c",
   type: "string",
   describe: "The path to your custom CSS file"
 }).option("output-css", {
@@ -33659,7 +33663,7 @@ const y = yargs(helpers$5.hideBin(dist.process.argv)).positional("input-html", {
 }).option("reset", {
   type: "string",
   describe: "Set to `false` to disable extended resets"
-}).demandOption(["input-html", "output-html"]);
+});
 const main = async () => {
   console.log("Running mailwind...");
   const argv = await y.argv;
@@ -33671,20 +33675,20 @@ const main = async () => {
   const reset = argv["reset"];
   const inputHtml = fs.readFileSync(inputHtmlPath, "utf-8");
   const options2 = {
-    css: inputCssPath != null ? fs.readFileSync(inputCssPath, "utf-8") : void 0,
+    css: inputCssPath ? fs.readFileSync(inputCssPath, "utf-8") : void 0,
     tailwindConfigPath,
     reset: reset === "false" ? false : true
   };
   const output = await mailwindCss(inputHtml, options2);
-  if (output == null) {
+  if (!output) {
     console.log("Failed to generate output.");
     return;
   }
   const { html: html2, css: css2 } = output;
-  if (outputHtmlPath != null) {
+  if (outputHtmlPath) {
     fs.writeFileSync(outputHtmlPath, html2);
   }
-  if (outputCssPath != null) {
+  if (outputCssPath) {
     fs.writeFileSync(outputCssPath, css2);
   }
 };

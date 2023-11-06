@@ -12,15 +12,15 @@
             "node": "./dist/mailwind.cjs"
         }
     },
+    "bin": {
+        "mailwind": "./dist/mailwind.cjs"
+    },
     "typesVersions": {
         "*": {
             "*": [
                 "./dist/mailwind.d.ts"
             ]
         }
-    },
-    "bin": {
-        "mailwind": "./dist/mailwind.cjs"
     },
     "scripts": {
         "build": "vite build",

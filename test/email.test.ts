@@ -5,9 +5,10 @@ import fs from "fs";
 
 describe("windy", () => {
     it("should inline css", async () => {
-        const inputHtmlPath = fs.readFileSync("./test/email.html", "utf-8");
-        const outputHtmlPath = "./test/email.output.html";
-        const outputCssPath = "./test/email.output.css";
+        const inputHtmlPath = fs.readFileSync("./data/email.html", "utf-8");
+
+        const outputHtmlPath = "./data/email.html";
+        const outputCssPath = "./data/email.output.css";
 
         const output = await mailwindCss(inputHtmlPath, {});
 
