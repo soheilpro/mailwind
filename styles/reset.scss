@@ -1,0 +1,40 @@
+/**
+ * Inline reset styles
+ * These set common defaults for a consistent UI. Their comments will be automatically stripped by juice
+ */
+
+/* default margin/padding, box sizing*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* height 100% all the way down */
+table,
+tr,
+td {
+    height: 100%;
+}
+/* img behavior - bicubic ms resizing, no border, fix space gap on gmail/hotmail */
+img {
+    outline: none;
+    text-decoration: none;
+    -ms-interpolation-mode: bicubic;
+    display: block;
+}
+a img {
+    border: none;
+}
+/* mso 07, 10 table spacing fix http://www.campaignmonitor.com/blog/post/3694/removing-spacing-from-around-tables-in-outlook-2007-and-2010 */
+table {
+    border-collapse: collapse;
+    mso-table-lspace: 0pt;
+    mso-table-rspace: 0pt;
+}
+/* tel/sms links are unstyled by default */
+a[href^="tel"],
+a[href^="sms"] {
+    text-decoration: none;
+    pointer-events: none;
+    cursor: default;
+}

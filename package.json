@@ -1,18 +1,53 @@
 {
-  "name": "mailwind",
-  "version": "2.2.0",
-  "description": "Use Tailwind CSS to design HTML emails.",
-  "license": "MIT",
-  "homepage": "https://github.com/soheilpro/mailwind",
-  "bin": {
-    "mailwind": "./src/index.js"
-  },
-  "author": "Soheil Rashidi",
-  "dependencies": {
-    "juice": "8.1.0",
-    "yargs": "17.6.2"
-  },
-  "peerDependencies": {
-    "tailwindcss": "3.x"
-  }
+    "name": "mailwind",
+    "version": "3.0.0",
+    "description": "Use Tailwind CSS to design HTML emails.",
+    "license": "MIT",
+    "homepage": "https://github.com/soheilpro/mailwind",
+    "type": "module",
+    "exports": {
+        ".": {
+            "import": "./dist/mailwind.mjs",
+            "require": "./dist/mailwind.js",
+            "node": "./dist/mailwind.js"
+        }
+    },
+    "typesVersions": {
+        "*": {
+            "*": [
+                "./dist/mailwind.d.ts"
+            ]
+        }
+    },
+    "bin": {
+        "mailwind": "./dist/mailwind.js"
+    },
+    "scripts": {
+        "build": "vite build",
+        "test": "vitest",
+        "tmp": "chmod a+x ./dist/mailwind.js && node ./dist/mailwind.js"
+    },
+    "author": "Soheil Rashidi, Mike Babb",
+    "dependencies": {
+        "juice": "9.1.0",
+        "rehype": "^13.0.1",
+        "rehype-rewrite": "^4.0.0",
+        "rehype-stringify": "^10.0.0",
+        "yargs": "17.7.2"
+    },
+    "devDependencies": {
+        "@types/node": "^20.8.10",
+        "@types/yargs": "^17.0.29",
+        "autoprefixer": "^10.4.16",
+        "sass": "^1.69.5",
+        "typescript": "^5.0.2",
+        "vite": "^4.4.5",
+        "vite-plugin-commonjs": "^0.10.0",
+        "vite-plugin-dts": "^3.6.3",
+        "vite-plugin-node-polyfills": "^0.15.0",
+        "vitest": "^0.34.6"
+    },
+    "peerDependencies": {
+        "tailwindcss": "3.x"
+    }
 }
