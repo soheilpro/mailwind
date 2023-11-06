@@ -31,6 +31,8 @@ const createStyleNode = (css: string) => {
     };
 };
 
+// Function to resolve CSS variables, since juice doesn't support them as of this version.
+// Credits to https://codedrift.com/thunked/tailwind-css-for-email for the great article!
 const resolveCssVariables = (s: string): string => {
     const VARIABLE_DEF_REGEX = /(--[a-zA-Z0-9-_]+)\s*:\s(.+?);/g;
     const VARIABLE_USAGE_REGEX = /var\((\s*--[a-zA-Z0-9-_]+\s*)(?:\)|,\s*(.*)\))/;
