@@ -1,9 +1,21 @@
-import { defineConfig } from "vitest/config";
-import path from "path";
-import dts from "vite-plugin-dts";
 import autoprefixer from "autoprefixer";
-import { nodePolyfills } from "vite-plugin-node-polyfills";
+import path from "path";
 import commonjs from "vite-plugin-commonjs";
+import dts from "vite-plugin-dts";
+import { nodePolyfills } from "vite-plugin-node-polyfills";
+import { defineConfig } from "vitest/config";
+
+const SHEBANG = "#!/usr/bin/env node\n";
+
+const prependShebangPlugin = {
+    name: "prepend-shebang",
+    renderChunk(code, chunk, options) {
+        if (chunk.fileName.endsWith(".cjs")) {
+            return SHEBANG + code;
+        }
+        return null; // Return null to signify no change to the chunk
+    },
+};
 
 export default defineConfig({
     base: "./",
@@ -24,17 +36,16 @@ export default defineConfig({
         rollupOptions: {
             external: [
                 // node builtins
-                // "child_process",
-                // "fs",
-                // "module",
-                // "path",
-                // "os",
-                // "yargs",
-                // "rehype",
-                // "rehype-rewrite",
-                // "rehype-stringify",
-                // "juice",
-                // "child_process",
+                "child_process",
+                "process",
+                "fs",
+                "module",
+                "path",
+                "os",
+                "child_process",
+                // node modules
+                "yargs/yargs",
+                "yargs/helpers",
             ],
         },
 
@@ -63,5 +74,6 @@ export default defineConfig({
         nodePolyfills({
             protocolImports: true,
         }),
+        prependShebangPlugin,
     ],
 });

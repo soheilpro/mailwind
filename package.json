@@ -20,12 +20,12 @@
         }
     },
     "bin": {
-        "mailwind": "./dist/mailwind.js"
+        "mailwind": "./dist/mailwind.cjs"
     },
     "scripts": {
         "build": "vite build",
         "test": "vitest",
-        "tmp": "chmod a+x ./dist/mailwind.js && node ./dist/mailwind.js"
+        "tmp": "vite build && node ./dist/mailwind.cjs"
     },
     "author": "Soheil Rashidi, Mike Babb",
     "dependencies": {

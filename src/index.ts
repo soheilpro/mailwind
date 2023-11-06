@@ -1,23 +1,39 @@
 import fs from "fs";
+import { hideBin } from "yargs/helpers";
+import yargs from "yargs/yargs";
 import { mailwindCss, MailwindOptions } from "./mailwind";
 
-import yargs from "yargs/yargs";
-
-const y = yargs(process.argv.slice(2))
-    .string("input-css")
-    .string("input-html")
-    .string("output-css")
-    .string("output-html")
-    .string("tailwind-config")
-    .string("reset")
-    .describe("input-css", "The path to your custom CSS file")
-    .describe("input-html", "The path to your input HTML file")
-    .describe("output-css", "The path to the CSS file that will be generated")
-    .describe("output-html", "The path to the inlined HTML file that will be generated")
-    .describe("tailwind-config", "The path to your custom Tailwind config file")
-    .describe("reset", "Set to `false` to disable extended resets");
+const y = yargs(hideBin(process.argv))
+    .positional("input-html", {
+        describe: "The path to your input HTML file",
+        type: "string",
+        default: "./data/email.html",
+    })
+    .positional("output-html", {
+        describe: "The path to the inlined HTML file that will be generated",
+        type: "string",
+        default: "./data/email.output.html",
+    })
+    .option("input-css", {
+        type: "string",
+        describe: "The path to your custom CSS file",
+    })
+    .option("output-css", {
+        type: "string",
+        describe: "The path to the CSS file that will be generated",
+    })
+    .option("tailwind-config", {
+        type: "string",
+        describe: "The path to your custom Tailwind config file",
+    })
+    .option("reset", {
+        type: "string",
+        describe: "Set to `false` to disable extended resets",
+    })
+    .demandOption(["input-html", "output-html"]);
 
 const main = async (): Promise<void> => {
+    console.log("Running mailwind...");
     const argv = await y.argv;
 
     const inputHtmlPath = argv["input-html"];
@@ -29,15 +45,6 @@ const main = async (): Promise<void> => {
     const tailwindConfigPath = argv["tailwind-config"];
 
     const reset = argv["reset"];
-
-    if (inputHtmlPath == null) {
-        console.log("The --input-html option is required.");
-        return;
-    }
-    if (outputCssPath == null && outputHtmlPath == null) {
-        console.log("Either --output-css or --output-html options must be specified.");
-        return;
-    }
 
     const inputHtml = fs.readFileSync(inputHtmlPath, "utf-8");
 

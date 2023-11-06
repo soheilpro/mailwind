@@ -1,4 +1,4 @@
-import childProcess from "child_process";
+import { spawn } from "child_process";
 
 const BASE_PX = 16;
 const TAILWIND_CONFIG_PATH = "./tailwind.config.cjs";
@@ -11,7 +11,8 @@ interface ExecResult {
 
 const exec = async (name: string, args: string[]): Promise<ExecResult> => {
     return new Promise((resolve, reject) => {
-        const child = childProcess.spawn(name, args);
+        const child = spawn(name, args);
+        console.log("Spawned child process:", child.pid);
         let stdout = Buffer.alloc(0);
         let stderr = Buffer.alloc(0);
 
@@ -50,4 +51,3 @@ const exec = async (name: string, args: string[]): Promise<ExecResult> => {
 };
 
 export { BASE_PX, TAILWIND_CONFIG_PATH, exec };
-

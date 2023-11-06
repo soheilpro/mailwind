@@ -5,6 +5,7 @@ import path from "path";
 import { rehype } from "rehype";
 import rehypeRewrite from "rehype-rewrite";
 import stringify from "rehype-stringify";
+import process from "process";
 
 import resetStyles from "../styles/reset.scss?inline";
 import universalStyles from "../styles/universal.scss?inline";
